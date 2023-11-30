@@ -13,4 +13,14 @@ RUN apk upgrade --no-cache \
   && apk del py3-pip git \
   && rm -rf /root/.cache/pip /tmp/s3cmd 
 
+COPY backup-cron /etc/cron.d/backup-cron
+
+COPY backup-script.sh /backup-script.sh
+
+RUN chmod +x /backup-script.sh
+
+RUN crontab /etc/cron.d/backup-cron
+
 WORKDIR /s3
+
+CMD crond -f

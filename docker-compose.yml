@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql-s3-backup:
+    image: ghcr.io/tacten/mysql-s3-backup
+    volumes:
+      - ./backup:/s3
+      - ./.s3:/root
+    env_file:
+      - .env
+      
+networks:
+  default:
+    name: erpnext-common-infra
+    external: true
