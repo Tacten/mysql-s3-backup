@@ -1,0 +1,20 @@
+{
+    "name": "s3-backup",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+      "release": "npx standard-version -a && git push --follow-tags origin master"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tacten/mysql-s3-backup/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/tacten/mysql-s3-backup/issues"
+    },
+    "homepage": "https://github.com/tacten/mysql-s3-backup#readme"
+  }
+  
