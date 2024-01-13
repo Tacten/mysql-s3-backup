@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:latest as cron
 LABEL org.opencontainers.image.authors="d3fk"
 LABEL org.opencontainers.image.source="https://github.com/Tacten/mysql-s3-backup.git"
 LABEL org.opencontainers.image.url="https://github.com/Tacten/mysql-s3-backup"
