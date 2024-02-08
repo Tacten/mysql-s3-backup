@@ -1,16 +1,16 @@
 version: '3'
 services:
-  mysql-s3-backup:
-    image: ghcr.io/tacten/mysql-s3-backup
+  s3-backup:
+    image: ghcr.io/tacten/s3-backup:postgresql 
     volumes:
       - backups:/s3
-      - sites:/sites
+      - uploads:/uploads
     env_file:
       - .env
 
 volumes:
   backups:
-  sites:
+  uploads:
 
 networks:
   default:
