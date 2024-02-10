@@ -4,7 +4,7 @@ mkdir -p /s3/${SITE}/uploads
 mkdir -p /s3/${SITE}/database_backups
 cd /s3/
 
-cp -r /uploads/ /s3/${SITE}/
+tar -zcvf /s3/${SITE}/uploads.gz /uploads
 file="/s3/${SITE}/database_backups/$(date +%F-%H)_${SERVER_NAME}_${DB}_postgres.sql.gz"
 pg_dumpall -U plane | gzip > ${file}
 if [ $? -eq 0 ]; then
